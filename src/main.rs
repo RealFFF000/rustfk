@@ -1,6 +1,4 @@
 use std::fs;
-use std::io;
-
 fn main() {
     let mut data = vec![0;1];
     let mut pointer = 0;
@@ -11,12 +9,11 @@ fn main() {
         .expect("input file not found");
     let mut counter = 0;
     let mut programcounter = 0;
-    while true{
+    loop{
             if file.chars().nth(counter) == None{
                 break;
             }
-
-            let mut character = file.chars().nth(counter).unwrap();
+            let  character = file.chars().nth(counter).unwrap();
             if character == '>'{
                 pointer+=1;
             }
